@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Pedido Especial 💕</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffd6e8; /* rosa claro */
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+    }
+
+    h1 {
+        color: #d63384; /* rosa mais escuro */
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .buttons {
+        position: relative;
+        width: 300px;
+        height: 150px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #sim {
+        background-color: #ff4da6;
+        color: white;
+    }
+
+    #nao {
+        background-color: #ff99c8;
+        color: white;
+        position: absolute;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>VOCÊ AINDA QUER NAMORAR COMIGO? 🥹</h1>
+
+<div class="buttons">
+    <button id="sim" onclick="responderSim()">SIM 💖</button>
+    <button id="nao" onmouseover="moverBotao()">NÃO 😅</button>
+</div>
+
+<script>
+    function responderSim() {
+        document.body.innerHTML = `
+            <h1 style="color:#d63384; text-align:center;">
+                NO FUNDO VOCÊ ME AMA <br>😍💘💕
+            </h1>
+        `;
+    }
+
+    function moverBotao() {
+        const botao = document.getElementById("nao");
+        const largura = window.innerWidth - 100;
+        const altura = window.innerHeight - 50;
+
+        const x = Math.random() * largura;
+        const y = Math.random() * altura;
+
+        botao.style.left = x + "px";
+        botao.style.top = y + "px";
+    }
+</script>
+
+</body>
+</html>
